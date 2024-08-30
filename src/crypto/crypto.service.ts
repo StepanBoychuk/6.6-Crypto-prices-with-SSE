@@ -13,7 +13,7 @@ export class CryptoService {
       });
       return cryptoData.data.data;
     } catch (error) {
-      return new HttpException('Internal server erorr', 500);
+      throw new HttpException('Internal server erorr', 500);
     }
   }
 
