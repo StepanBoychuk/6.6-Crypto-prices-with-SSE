@@ -1,4 +1,4 @@
-import { HttpException, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import { CryptoInterface } from './interfaces/crypto.interfase';
 
@@ -13,7 +13,7 @@ export class CryptoService {
       });
       return cryptoData.data.data;
     } catch (error) {
-      throw new HttpException('Internal server erorr', 500);
+      throw new Error('Unable to fetch crypto data');
     }
   }
 
